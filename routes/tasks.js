@@ -6,15 +6,15 @@ const { check } = require("express-validator");
 router.get("/", tasksController.getTasks);
 
 router.post(
-  "/",
-  [check("name", "El nombre de la tarea es obligatorio").not().isEmpty()],
-  tasksController.createTask
+	"/",
+	[check("name", "El nombre de la tarea es obligatorio").not().isEmpty()],
+	tasksController.createTask,
 );
 
 router.put(
-  "/:id",
-  [check("name", "El nombre de la tarea es obligatorio").not().isEmpty()],
-  tasksController.updateTask
+	"/:id",
+	[check("name", "El nombre de la tarea es obligatorio").not().isEmpty()],
+	tasksController.updateTask,
 );
 
 router.delete("/:id", tasksController.deleteTask);
